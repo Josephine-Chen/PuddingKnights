@@ -6,10 +6,15 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
 //Routes go here
-// app.get('/', function (req, res) {
-//    res.send('Hello World');
-// })
+app.get('/', function (req, res) {
+   res.sendFile('./index.html');
+})
+
+app.get('/elise', function (req, res) {
+   res.sendFile('./elise.html');
+})
 // app.use('/', index);
+// app.use('/elise', elise);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
